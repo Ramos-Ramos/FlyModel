@@ -12,7 +12,7 @@ pip install git+https://github.com/Ramos-Ramos/flymodel
 
 ```python
 import numpy as xp
-from fruit_fly_net import FruitFlyNet
+from flymodel import FlyModel
 
 model = FlyModel(
   input_size=84,        # input dimension size (no. of projection neurons)
