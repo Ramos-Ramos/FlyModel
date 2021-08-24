@@ -4,9 +4,14 @@ from numba import cuda
 with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
-cupy = 'cupy-cuda101'
-if cuda.is_available():
-    cupy = 'cupy-cuda'+''.join(map(str, cuda.runtime.get_version()))
+required_packages = ['numpy', 'einops']
+try:
+    import cupy
+except ModuleNotFoundError:
+    cupy = 'cupy-cuda101'
+    if cuda.is_available():
+        cupy = 'cupy-cuda'+''.join(map(str, cuda.runtime.get_version()))
+    required_packages.append(cupy)
 
 setuptools.setup(
     name="flymodel",
@@ -28,9 +33,5 @@ setuptools.setup(
     package_dir={"": "src"},
     packages=setuptools.find_packages(where="src"),
     python_requires=">=3.6",
-    install_requires=[
-        "numpy",
-        cupy,
-        "einops"
-    ]
+    install_requires=required_packages
 )
