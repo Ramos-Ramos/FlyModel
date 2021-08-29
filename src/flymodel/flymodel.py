@@ -92,7 +92,7 @@ class FlyModel():
   def state_dict(self) -> Dict[str, Array]:
     """Returns dictionary of weights"""
 
-    return {'weights0': cp.asnumpy(self.weights0), 'weights1': cp.asnumpy(self.weights1)}
+    return {'weights0': cp.asnumpy(self.weights0).copy(), 'weights1': cp.asnumpy(self.weights1).copy()}
 
   def load_state_dict(self, state_dict: Dict[str, Array]) -> None:
     """Loads weights
