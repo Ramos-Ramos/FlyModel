@@ -87,7 +87,7 @@ class FlyModel():
     
     assert self.training, "Cannot update weights in eval mode"
     assert labels is not None, "Cannot updates weights without labels"
-    self.weights1 * (1 - self.decay)
+    self.weights1 *= (1 - self.decay)
     for label in labels:
       self.weights1[label] += reduce(self.lr * hidden, 'b m -> m', 'sum')
     self.weights1 = self.xp.clip(self.weights1, 0, 1)
