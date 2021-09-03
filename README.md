@@ -8,6 +8,12 @@ Unofficial Python implementation of [Algorithmic insights on continual learning 
 pip install git+https://github.com/Ramos-Ramos/flymodel
 ```
 
+## Demo
+
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Ramos-Ramos/FlyModel/blob/main/FlyModel_demo_🍄.ipynb)
+
+Check out our Colab demo!
+
 ## Usage
 
 ```python
