@@ -18,8 +18,8 @@ model = FlyModel(
   input_size=84,        # input dimension size (no. of projection neurons)
   hidden_size=3200,     # hidden dimension size (no. of Kenyon cells)
   output_size=20,       # output dimension size (no. of mushroom body output neurons)
-  top_activations=16,   # no. of top cells to be left active in hidden layer
-  lr=1e-4,              # learning rate (learning is performed internally)
+  top_activations=160,   # no. of top cells to be left active in hidden layer
+  lr=1e-2,              # learning rate (learning is performed internally)
   decay=0,              # forgetting term
   input_connections=10  # number of inputs to connect to for each hidden neuron; alternativey, `input_density` can be specified
 )
